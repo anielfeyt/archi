@@ -56,17 +56,6 @@ gsap.from('.anim-4', {
     opacity: 0
 })
 
-gsap.from('.anim-5', {
-    scrollTrigger: {
-        trigger: '.anim-5',
-        start: "top bottom",
-    },
-    duration: 0.6,
-    y: -200,
-    opacity: 0,
-    stagger: 0.3
-})
-
 gsap.from('.anim-6', {
     scrollTrigger: {
         trigger: '.anim-6',
@@ -118,6 +107,16 @@ const aboutAnchorM = document.getElementById('about-anchor-m');
 const servicesAnchorM = document.getElementById('services-anchor-m');
 const contactAnchorM = document.getElementById('contact-anchor-m');
 const toTop = document.querySelector('.toTop');
+
+if (window.screen.width > 348) {
+    document.addEventListener('scroll', () => {
+        if (window.pageYOffset >= 200) {
+            toTop.style.display = "block";
+        } else {
+            toTop.style.display = "none";
+        }
+    });
+}
 
 toTop.addEventListener('click', (e) => {
     e.preventDefault();
