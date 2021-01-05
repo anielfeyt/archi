@@ -91,14 +91,84 @@ openBtn.addEventListener('click', () => {
     })
 });
 
-closeBtn.addEventListener('click', () => {
-
+const closeMenu = () => {
     gsap.to(mobileMenu, {
         duration: 0.5,
         right: "-100%"
     });
+}
 
+closeBtn.addEventListener('click', () => {
+    closeMenu();
+});
+
+// Scroll anchors
+
+const intro = document.getElementById('intro-tag');
+const about = document.getElementById('about-tag');
+const services = document.getElementById('services-tag');
+const contact = document.getElementById('contact-tag');
+
+
+const aboutAnchor = document.getElementById('about-anchor');
+const servicesAnchor = document.getElementById('services-anchor');
+const contactAnchor = document.getElementById('contact-anchor');
+
+const aboutAnchorM = document.getElementById('about-anchor-m');
+const servicesAnchorM = document.getElementById('services-anchor-m');
+const contactAnchorM = document.getElementById('contact-anchor-m');
+const toTop = document.querySelector('.toTop');
+
+toTop.addEventListener('click', (e) => {
+    e.preventDefault();
+    intro.scrollIntoView({
+        behavior: 'smooth'
+    });
 });
 
 
+aboutAnchor.addEventListener('click', (e) => {
+    e.preventDefault();
+    about.scrollIntoView({
+        behavior: 'smooth'
+    });
+});
+
+servicesAnchor.addEventListener('click', (e) => {
+    e.preventDefault();
+    services.scrollIntoView({
+        behavior: 'smooth'
+    });
+});
+
+contactAnchor.addEventListener('click', (e) => {
+    e.preventDefault();
+    contact.scrollIntoView({
+        behavior: 'smooth'
+    });
+});
+
+aboutAnchorM.addEventListener('click', (e) => {
+    e.preventDefault();
+    closeMenu();
+    about.scrollIntoView({
+        behavior: 'smooth'
+    });
+});
+
+servicesAnchorM.addEventListener('click', (e) => {
+    e.preventDefault();
+    closeMenu();
+    services.scrollIntoView({
+        behavior: 'smooth'
+    });
+});
+
+contactAnchorM.addEventListener('click', (e) => {
+    e.preventDefault();
+    closeMenu();
+    contact.scrollIntoView({
+        behavior: 'smooth'
+    });
+});
 
